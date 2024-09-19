@@ -1,0 +1,64 @@
+name: Bug Report
+description: File a bug report
+title: "\u200b"
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+        to learn how we manage issues and when your issue will be processed.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Distribution version
+      description: What version of HiveSpace are you using?
+      options:
+        - macOS x64 (Intel)
+        - macOS ARM 64 (Apple Silicon)
+        - Windows x64
+        - Linux
+        - Web (app.HiveSpace.app)
+        - Web (HiveSpace.fail)
+        - Web (insider.HiveSpace.app)
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: What browsers are you seeing the problem on if you're using web version?
+      multiple: true
+      options:
+        - Chrome
+        - Microsoft Edge
+        - Firefox
+        - Safari
+        - Other
+  - type: checkboxes
+    id: selfhost
+    attributes:
+      label: Are you self-hosting?
+      description: >
+        If you are self-hosting, please check the box and provide information about your setup.
+      options:
+        - label: 'Yes'
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: textarea
+    attributes:
+      label: Anything else?
+      description: |
+        Links? References? Anything that will give us more context about the issue you are encountering!
+        Tip: You can attach images here
