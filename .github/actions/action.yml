@@ -1,0 +1,55 @@
+name: 'HiveSpace Rust build'
+description: 'Rust build setup, including cache configuration'
+inputs:
+  target:
+    description: 'Cargo target'
+    required: true
+  package:
+    description: 'Package to build'
+    required: true
+  nx_token:
+    description: 'Nx Cloud access token'
+    required: false
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Print rustup toolchain version
+      shell: bash
+      id: rustup-version
+      run: |
+        export RUST_TOOLCHAIN_VERSION="$(grep 'channel' rust-toolchain.toml | head -1 | awk -F '"' '{print $2}')"
+        echo "Rust toolchain version: $RUST_TOOLCHAIN_VERSION"
+        echo "RUST_TOOLCHAIN_VERSION=$RUST_TOOLCHAIN_VERSION" >> "$GITHUB_OUTPUT"
+    - name: Setup Rust
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        toolchain: '${{ steps.rustup-version.outputs.RUST_TOOLCHAIN_VERSION }}'
+        targets: ${{ inputs.target }}
+      env:
+        CARGO_INCREMENTAL: '1'
+
+    - name: Set CC
+      if: ${{ contains(inputs.target, 'linux') && inputs.package != '@HiveSpace/native' }}
+      shell: bash
+      run: |
+        echo "CC=clang" >> "$GITHUB_ENV"
+        echo "TARGET_CC=clang" >> "$GITHUB_ENV"
+
+    - name: Cache cargo
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cargo/registry/index/
+          ~/.cargo/registry/cache/
+          ~/.cargo/git/db/
+          ~/.napi-rs
+          target/${{ inputs.target }}
+        key: stable-${{ inputs.target }}-cargo-cache
+    - name: Build
+      shell: bash
+      run: |
+        yarn workspace ${{ inputs.package }} nx build ${{ inputs.package }} -- --target ${{ inputs.target }} --use-napi-cross
+      env:
+        NX_CLOUD_ACCESS_TOKEN: ${{ inputs.nx_token }}
+        DEBUG: 'napi:*'
