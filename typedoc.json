@@ -1,0 +1,9 @@
+{
+  "entryPoints": ["packages/common/infra"],
+  "out": "docs/reference/dist",
+  "entryPointStrategy": "packages",
+  "includeVersion": false,
+  "logLevel": "Error",
+  "readme": "./docs/reference/readme.md",
+  "name": "HiveSpace Development Reference"
+}
