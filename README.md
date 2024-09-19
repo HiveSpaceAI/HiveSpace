@@ -6,7 +6,7 @@
     <br>
 </h1>
 <a href="https://hive.space/download">
-    <img alt="HiveSpace logo" src="blob:https://imgur.com/f0ad1002-2cfe-45e8-af0b-b607be9e3f19" style="width: 100%">
+    <img alt="HiveSpace logo" src="https://i.imgur.com/THTHU4P.png" style="width: 100%">
 </a>
 <br/>
 <p align="center">
