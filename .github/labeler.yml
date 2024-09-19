@@ -1,0 +1,85 @@
+docs:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'docs/**/*'
+          - '**/README.md'
+          - 'packages/frontend/templates/**/*'
+
+test:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'tests/**/*'
+          - '**/tests/**/*'
+          - '**/__tests__/**/*'
+
+mod:dev:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'scripts/**/*'
+          - 'tools/cli/**/*'
+          - 'packages/common/debug/**/*'
+
+mod:infra:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'packages/common/infra/**/*'
+
+mod:plugin-cli:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'tools/plugin-cli/**/*'
+
+mod:i18n:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'packages/frontend/i18n/**/*'
+
+mod:env:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'packages/common/env/**/*'
+
+mod:component:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'packages/frontend/component/**/*'
+
+mod:server-native:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'packages/backend/native/**/*'
+
+mod:native:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'packages/frontend/native/**/*'
+
+mod:store:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/atoms/**/*'
+
+rust:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.rs'
+          - '**/Cargo.toml'
+          - '**/Cargo.lock'
+          - '**/rust-toolchain'
+          - '**/rust-toolchain.toml'
+          - '**/rustfmt.toml'
+
+app:core:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'packages/frontend/core/**/*'
+
+app:electron:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'packages/frontend/electron/**/*'
+
+app:server:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'packages/backend/server/**/*'
