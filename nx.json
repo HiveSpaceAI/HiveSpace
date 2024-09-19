@@ -1,0 +1,112 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "npmScope": "DexisApp",
+  "nxCloudAccessToken": "MzUwNTU4YWItZGFhYi00YjE2LWIxODAtODk4NmIwYjMwYzZkfHJlYWQ=",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "test", "e2e", "lint"],
+        "runtimeCacheInputs": ["node -v"]
+      }
+    }
+  },
+  "affected": {
+    "defaultBase": "canary"
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": [
+      "{workspaceRoot}/tsconfig.json",
+      "{workspaceRoot}/nx.json"
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [
+        "{projectRoot}/dist",
+        "{projectRoot}/build",
+        "{projectRoot}/out",
+        "{projectRoot}/storybook-static"
+      ],
+      "inputs": [
+        "{workspaceRoot}/packages/frontend/infra/**/*",
+        "{workspaceRoot}/packages/frontend/sdk/**/*",
+        {
+          "runtime": "node -v"
+        },
+        {
+          "env": "BUILD_TYPE"
+        },
+        {
+          "env": "PERFSEE_TOKEN"
+        },
+        {
+          "env": "SENTRY_ORG"
+        },
+        {
+          "env": "SENTRY_PROJECT"
+        },
+        {
+          "env": "SENTRY_AUTH_TOKEN"
+        },
+        {
+          "env": "SENTRY_DSN"
+        },
+        {
+          "env": "DISTRIBUTION"
+        },
+        {
+          "env": "COVERAGE"
+        }
+      ]
+    },
+    "e2e": {
+      "outputs": ["{workspaceRoot}/.nyc_output", "{projectRoot}/test-results"],
+      "inputs": [
+        {
+          "runtime": "node -v"
+        },
+        {
+          "runtime": "yarn playwright --version"
+        }
+      ]
+    },
+    "test": {
+      "outputs": ["{workspaceRoot}/.nyc_output"],
+      "inputs": [
+        {
+          "env": "ENABLE_PRELOADING"
+        },
+        {
+          "env": "COVERAGE"
+        }
+      ]
+    },
+    "test:ui": {
+      "outputs": ["{workspaceRoot}/.nyc_output"],
+      "inputs": [
+        {
+          "env": "ENABLE_PRELOADING"
+        },
+        {
+          "env": "COVERAGE"
+        }
+      ]
+    },
+    "test:coverage": {
+      "outputs": ["{workspaceRoot}/.nyc_output"],
+      "inputs": [
+        {
+          "env": "ENABLE_PRELOADING"
+        }
+      ]
+    }
+  }
+}
