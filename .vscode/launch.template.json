@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Dev",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "yarn run dev"
+    },
+    {
+      "name": "Run Dev Locally",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "yarn run dev:local"
+    },
+    {
+      "name": "Launch HiveSpace Cloud",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "yarn",
+      "cwd": "${workspaceFolder}",
+      "runtimeArgs": ["workspace", "@HiveSpace/server", "dev"]
+    }
+  ]
+}
