@@ -1,0 +1,66 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":disablePeerDependencies"],
+  "labels": ["dependencies"],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**",
+    "**/examples/**",
+    "**/__tests__/**",
+    "**/test/**",
+    "**/__fixtures__/**"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^eslint", "^@typescript-eslint"],
+      "rangeStrategy": "replace",
+      "groupName": "linter"
+    },
+    {
+      "matchDepNames": ["oxlint"],
+      "rangeStrategy": "replace",
+      "groupName": "oxlint"
+    },
+    {
+      "groupName": "canary",
+      "matchPackagePatterns": [""],
+      "excludePackageNames": ["icons"],
+      "rangeStrategy": "replace",
+      "followTag": "canary"
+    },
+    {
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "matchPackagePatterns": ["*"],
+      "excludePackagePatterns": ["", "oxlint"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "rust toolchain",
+      "matchManagers": ["custom.regex"],
+      "matchDepNames": ["rustc"]
+    }
+  ],
+  "commitMessagePrefix": "chore: ",
+  "commitMessageAction": "bump up",
+  "commitMessageTopic": "{{depName}} version",
+  "ignoreDeps": [],
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "extends": ["schedule:weekly"]
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^rust-toolchain\\.toml?$"],
+      "matchStrings": [
+        "channel\\s*=\\s*\"(?<currentValue>\\d+\\.\\d+(\\.\\d+)?)\""
+      ],
+      "depNameTemplate": "rustc",
+      "packageNameTemplate": "rust-lang/rust",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}
