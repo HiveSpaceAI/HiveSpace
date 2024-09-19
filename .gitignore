@@ -1,0 +1,84 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+.yarn/versions
+
+# compiled output
+*dist
+/tmp
+/out-tsc
+.nyc_output
+.coverage
+.swc
+
+# dependencies
+node_modules
+
+# IDEs and editors
+**/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/tasks.json
+!.vscode/settings.template.json
+!.vscode/launch.template.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+.pnpm-debug.log
+/typings
+tsconfig.tsbuildinfo
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# env
+*.env.local
+*.local.env
+.history
+
+.next
+.vercel
+out/
+storybook-static
+i18n-generated.ts
+
+test-results
+playwright-report
+playwright/.cache
+download
+
+# Cache
+.eslintcache
+next-env.d.ts
+.rollup.cache
+
+# Rust
+target
+*.node
+tsconfig.node.tsbuildinfo
+lib
+Wasper.db
+apps/web/next-routes.conf
+.nx
+
+packages/frontend/templates/edgeless
+packages/frontend/core/public/static/templates
