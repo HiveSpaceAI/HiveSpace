@@ -1,0 +1,163 @@
+{
+  "compilerOptions": {
+    "verbatimModuleSyntax": true,
+    // Classification follows https://www.typescriptlang.org/tsconfig
+    // Type Checking
+    "strict": true,
+    "exactOptionalPropertyTypes": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": false,
+    "useUnknownInCatchVariables": true,
+    // Modules
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "types": ["HiveSpace__env"],
+    // Emit
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    // skip type emit for @internal types
+    // "stripInternal": true,
+    // JavaScript Support
+    "allowJs": false,
+    "checkJs": false,
+    // Interop Constraints
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    // Language and Environment
+    "jsx": "preserve",
+    "jsxImportSource": "@emotion/react",
+    "lib": ["ESNext", "DOM"],
+    "target": "ES2022",
+    "useDefineForClassFields": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": false,
+    // Projects
+    "composite": true,
+    "incremental": true,
+    // Completeness
+    "skipLibCheck": true, // skip all type checks for .d.ts files
+    "paths": {
+      "@HiveSpace/core/*": ["./packages/frontend/core/src/*"],
+      "@HiveSpace/core": ["./packages/frontend/core/src/index.ts"],
+      "@HiveSpace/cli/*": ["./tools/cli/src/*"],
+      "@HiveSpace/server/*": ["./packages/backend/server/src/*"],
+      "@HiveSpace/component": ["./packages/frontend/component/src/index"],
+      "@HiveSpace/component/*": [
+        "./packages/frontend/component/src/components/*/index",
+        "./packages/frontend/component/src/components/*"
+      ],
+      "@HiveSpace/i18n": ["./packages/frontend/i18n/src"],
+      "@HiveSpace/i18n/hooks": ["./packages/frontend/i18n/src/i18n-generated"],
+      "@HiveSpace/debug": ["./packages/common/debug"],
+      "@HiveSpace/env": ["./packages/common/env/src"],
+      "@HiveSpace/env/*": ["./packages/common/env/src/*"],
+      "@HiveSpace/graphql": ["./packages/frontend/graphql/src"],
+      "@HiveSpace/electron/scripts/*": ["./packages/frontend/electron/scripts/*"],
+      "@HiveSpace-test/kit/*": ["./tests/kit/*"],
+      "@HiveSpace-test/fixtures/*": ["./tests/fixtures/*"],
+      "@toeverything/infra": ["./packages/common/infra/src"],
+      "@HiveSpace/native": ["./packages/frontend/native/index.d.ts"],
+      "@HiveSpace/native/*": ["./packages/frontend/native/*"],
+      "@HiveSpace/server-native": ["./packages/backend/native/index.d.ts"],
+      // Development only
+      "@HiveSpace/electron/*": ["./packages/frontend/electron/src/*"]
+    }
+  },
+  "include": [],
+  "references": [
+    // Backend
+    {
+      "path": "./packages/backend/server"
+    },
+    {
+      "path": "./packages/backend/server/tests"
+    },
+    // Frontend
+    {
+      "path": "./packages/frontend/component"
+    },
+    {
+      "path": "./packages/frontend/core"
+    },
+    {
+      "path": "./packages/frontend/web"
+    },
+    {
+      "path": "./packages/frontend/electron/tsconfig.test.json"
+    },
+    {
+      "path": "./packages/frontend/electron/renderer/tsconfig.json"
+    },
+    {
+      "path": "./packages/frontend/graphql"
+    },
+    {
+      "path": "./packages/frontend/i18n"
+    },
+    // Common
+    {
+      "path": "./packages/common/debug"
+    },
+    {
+      "path": "./packages/common/env"
+    },
+    {
+      "path": "./packages/common/infra"
+    },
+    // Tools
+    {
+      "path": "./tools/cli"
+    },
+    // Tests
+    {
+      "path": "./tests/kit"
+    },
+    {
+      "path": "./tests/HiveSpace-local"
+    },
+    {
+      "path": "./tests/HiveSpace-migration"
+    },
+    {
+      "path": "./tests/HiveSpace-legacy/0.7.0-canary.18"
+    },
+    {
+      "path": "./tests/HiveSpace-legacy/0.8.0-canary.7"
+    },
+    {
+      "path": "./tests/HiveSpace-cloud"
+    },
+    {
+      "path": "./tests/HiveSpace-desktop"
+    },
+    {
+      "path": "./tests/HiveSpace-legacy/0.8.4"
+    },
+    {
+      "path": "./tests/HiveSpace-legacy/0.6.1-beta.1"
+    },
+    // Others
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "files": [],
+  "exclude": ["node_modules", "target", "lib", "test-results"],
+  "ts-node": {
+    "esm": true,
+    "compilerOptions": {
+      "module": "ESNext",
+      "moduleResolution": "Node"
+    }
+  }
+}
