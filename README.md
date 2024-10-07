@@ -5,7 +5,7 @@
     Write, Draw and Plan All at Once
     <br>
 </h1>
-<a href="https://hive.space/download">
+<a href="hive-space.app">
     <img alt="HiveSpace logo" src="https://i.imgur.com/THTHU4P.png" style="width: 100%">
 </a>
 <br/>
@@ -19,11 +19,11 @@
 <br/>
 
 <div align="center">
-    <a href="https://HiveSpace.app">Home Page</a> |
-    <a href="https://x.com/HiveSpace_app">Twitter</a> |
-    <a href="https://t.me/HiveSpaceAI">Telegram</a> |
-    <a href="https://medium.com/HiveSpaceAI">Medium</a> |
-    <a href="https://hivespace.app">Documentation</a>
+    <a href="https://Hive-Space.app">Home Page</a> |
+    <a href="twitter.com/HiveSpace_app">Twitter</a> |
+    <a href="t.me/HiveSpaceApp">Telegram</a> |
+    <a href="medium.com/@HiveSpace">Medium</a> |
+    <a href="https://hive-space.app">Documentation</a>
 </div>
 <br/>
 
