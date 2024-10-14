@@ -20,7 +20,7 @@
 
 <div align="center">
     <a href="https://Hive-Space.app">Home Page</a> |
-    <a href="twitter.com/HiveSpace_app">Twitter</a> |
+    <a href="twitter.com/hivecall">Twitter</a> |
     <a href="t.me/HiveSpaceApp">Telegram</a> |
     <a href="medium.com/@HiveSpace">Medium</a> |
     <a href="https://hive-space.app">Documentation</a>
