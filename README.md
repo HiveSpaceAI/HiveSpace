@@ -1,7 +1,7 @@
 <div align="center">
 
 <h1 style="border-bottom: none">
-    <b><a href="https://hivespace.app">HiveSpace</a></b><br />
+    <b><a href="hivespace.net">HiveSpace</a></b><br />
     Write, Draw and Plan All at Once
     <br>
 </h1>
@@ -19,7 +19,7 @@
 <br/>
 
 <div align="center">
-    <a href="https://Hive-Space.app">Home Page</a> |
+    <a href="hivespace.net">Home Page</a> |
     <a href="twitter.com/hivecall">Twitter</a> |
     <a href="t.me/HiveSpaceApp">Telegram</a> |
     <a href="medium.com/@HiveSpace">Medium</a> |
